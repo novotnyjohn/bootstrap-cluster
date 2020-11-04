@@ -9,10 +9,12 @@ spec:
     namespace: monitoring
     server: 'https://kubernetes.default.svc'
   source:
-    path: ''
-    repoURL: 'https://kubernetes-charts.storage.googleapis.com/'
-    targetRevision: 9.3.2
-    chart: prometheus-operator
+    repoURL: 'https://github.com/novotnyjohn/prometheus-operator'
+    path: .
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - custom-values.yaml
   project: default
   syncPolicy:
     automated:
